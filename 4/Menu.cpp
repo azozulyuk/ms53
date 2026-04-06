@@ -24,6 +24,7 @@ that my professor provided to complete my work for function main,ect.
 #define _CRT_SECURE_NO_WARNINGS
 #include "Menu.h"
 #include <cstring>
+#include <iostream>
 using namespace std;
 namespace seneca {
     Menu::Menu(const char* title, const char* exit, int indent) {
@@ -55,7 +56,10 @@ namespace seneca {
         for (int i = 0; i < m_indent + 1; i++) cout << ' ';
         cout << "0- " << m_exit << endl;
 
-        for (int i = 0; i < m_indent; i++) cout << ' ';
+        if (m_indent > 0)
+            for (int i = 0; i < m_indent; i++) cout << ' ';
+
+
         cout << "> ";
 
         cin >> choice;
